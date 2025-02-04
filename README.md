@@ -1,50 +1,86 @@
-# React + TypeScript + Vite
+# Panduan Menjalankan Program React TypeScript di Lokal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Panduan ini akan memandu Anda untuk menjalankan aplikasi berbasis **React** dengan **TypeScript** yang ada di repositori GitHub. Ikuti langkah-langkah berikut untuk mengkloning repositori, menginstal dependensi, dan menjalankan aplikasi di komputer lokal Anda.
 
-Currently, two official plugins are available:
+## Prasyarat
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Sebelum memulai, pastikan Anda sudah memiliki perangkat lunak berikut yang terinstal di sistem Anda:
 
-## Expanding the ESLint configuration
+1. **Node.js** (Versi 14 atau lebih baru)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+   - **Node.js** diperlukan untuk menjalankan aplikasi berbasis JavaScript.
+   - Anda dapat mengunduhnya dari [nodejs.org](https://nodejs.org/).
 
-- Configure the top-level `parserOptions` property like this:
+2. **Git** (Untuk mengkloning repositori dari GitHub)
+   - Anda bisa mengunduh dan menginstalnya dari [git-scm.com](https://git-scm.com/).
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Langkah-Langkah Menjalankan Aplikasi
+
+### 1. Mengkloning Repositori dari GitHub
+
+Langkah pertama adalah mengkloning repositori ini ke komputer lokal Anda. Gunakan perintah berikut di terminal (pastikan Anda mengganti URL repositori dengan yang sesuai):
+
+```bash
+git clone https://github.com/burhanusr/saraswanti-react
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### 2. Masuk ke Direktori Proyek
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+Setelah repositori berhasil dikloning, masuk ke dalam direktori proyek menggunakan perintah berikut:
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+cd saraswanti-react
 ```
+
+### 3. Menginstal Dependensi
+
+Proyek ini menggunakan npm (Node Package Manager) untuk mengelola dependensi. Jalankan perintah berikut untuk menginstal semua dependensi yang diperlukan oleh aplikasi:
+
+```bash
+npm install
+```
+
+Perintah ini akan membaca file package.json dan mengunduh semua paket yang tercantum di dalamnya.
+
+### 4. Menjalankan Aplikasi di Lokal
+
+Setelah semua dependensi terinstal, Anda dapat menjalankan aplikasi dengan perintah berikut:
+
+```bash
+npm run dev
+```
+
+Perintah ini akan memulai server pengembangan dan aplikasi akan terbuka secara otomatis di browser Anda. Secara default, aplikasi dapat diakses melalui http://localhost:3000.
+
+### 5. Menjalankan Aplikasi dalam Mode Produksi (Opsional)
+
+Jika Anda ingin membangun aplikasi untuk digunakan dalam produksi (misalnya untuk deployment ke server), Anda dapat menjalankan perintah berikut:
+
+```bash
+npm run build && npm run preview
+```
+
+Perintah ini akan membangun aplikasi untuk produksi dan menyimpannya dalam folder build/ dengan optimasi yang lebih baik untuk performa.
+
+### Struktur Proyek
+
+Berikut adalah struktur utama direktori dalam proyek ini:
+
+```bash
+/src
+  /components    # Komponen-komponen React
+  /utils         # Fungsi utilitas dan helper
+  App.tsx        # Komponen utama aplikasi
+  main.tsx      # Titik masuk aplikasi (entry point)
+/index.html     # HTML template utama
+/package.json     # Konfigurasi npm dan dependensi proyek
+/README.md       # Panduan ini
+```
+
+### Catatan
+
+- Pastikan Node.js sudah terinstal dengan benar di sistem Anda. Anda dapat memverifikasi instalasinya dengan menjalankan perintah node -v di terminal.
+- Pastikan juga npm terinstal dengan menjalankan npm -v di terminal. Jika npm belum terinstal, npm akan otomatis terinstal bersama dengan Node.js.
+- Jika Anda tidak melihat aplikasi berjalan dengan benar atau mendapatkan kesalahan, coba untuk menjalankan kembali perintah npm install untuk memastikan semua dependensi terinstal dengan benar.
+
+Jika Anda mengalami kesulitan atau membutuhkan bantuan lebih lanjut, silahkan hubungi saya.
