@@ -50,7 +50,7 @@ Setelah semua dependensi terinstal, Anda dapat menjalankan aplikasi dengan perin
 npm run dev
 ```
 
-Perintah ini akan memulai server pengembangan dan aplikasi akan terbuka secara otomatis di browser Anda. Secara default, aplikasi dapat diakses melalui http://localhost:3000.
+Perintah ini akan memulai server pengembangan dan aplikasi akan terbuka secara otomatis di browser Anda. Secara default, aplikasi dapat diakses melalui http://localhost:5173.
 
 ### 5. Menjalankan Aplikasi dalam Mode Produksi (Opsional)
 
