@@ -68,6 +68,7 @@ Berikut adalah struktur utama direktori dalam proyek ini:
 
 ```bash
 /src
+  /api           # Folder untuk panggilan API
   /components    # Komponen-komponen React
   /utils         # Fungsi utilitas dan helper
   App.tsx        # Komponen utama aplikasi
